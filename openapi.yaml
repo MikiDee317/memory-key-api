@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: Memory Key Fetcher API
+  version: 1.0.0
+paths:
+  /:
+    get:
+      summary: Get Memory Keys from Google Docs
+      description: Fetches the full text of Miki's Memory Keys from the Google Doc endpoint.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: string
+                  updated:
+                    type: string
+                    format: date-time
+servers:
+  - url: "https://script.google.com/macros/s/AKfycbwgULWmfGB8I0__RDqmGmBTkySZMBXHgc8WRq0T8CQEm8NWqWvpmO1hYkhK3RLqbTLBxg/exec"
